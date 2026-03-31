@@ -1,0 +1,399 @@
+/* NFG Transportation — shared styles */
+@font-face {
+  font-family: "Passenger Display";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Passenger Display"),
+    url("../fonts/PassengerDisplay.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/27bae36ad650990931267f74ec981ce6.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-text: "Passenger Display", ui-sans-serif, system-ui, sans-serif;
+  --bg: #0f1419;
+  --surface: #1a222d;
+  --text: #e8eaed;
+  --muted: #9aa0a6;
+  --accent: #c9a227;
+  --accent-hover: #ddb82e;
+  --border: #2d3741;
+}
+
+html {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-text);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  background: transparent;
+}
+
+.site-header .logo {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.site-header .logo img {
+  display: block;
+  height: clamp(6rem, 15vw, 8.25rem);
+  width: auto;
+  max-width: min(36rem, 90vw);
+  object-fit: contain;
+}
+
+.site-header .logo:hover img {
+  opacity: 0.92;
+}
+
+.site-header .logo:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.75rem;
+  padding-top: 0.5rem;
+}
+
+.site-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Solid header for inner pages */
+.site-header--page {
+  position: relative;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header--page .logo img {
+  height: clamp(2.5rem, 6vw, 3.25rem);
+  max-width: min(14rem, 50vw);
+}
+
+.site-header--page .site-nav {
+  padding-top: 0;
+}
+
+.site-header--page .site-nav a {
+  text-shadow: none;
+  font-size: 0.9rem;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-color: #1a1a1a;
+}
+
+.hero__bg .hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.hero__overlay {
+  display: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 56rem;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hero__subtitle {
+  margin: 1rem 0 0;
+  font-size: clamp(3rem, 4vw, 3rem);
+  color: rgba(232, 234, 237, 0.9);
+  font-weight: 1000;
+}
+
+/* Inner page hero banner */
+.page-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.page-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 20, 25, 0.55);
+}
+
+.page-hero__title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 0.5);
+}
+
+/* Content section used on inner pages */
+.content-section {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.content-section h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+}
+
+.content-section p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 1.25rem;
+}
+
+.content-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Two-column layout for About / Services */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.two-col--reverse .two-col__text {
+  order: -1;
+}
+
+.two-col img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+  .two-col--reverse .two-col__text {
+    order: 0;
+  }
+}
+
+/* Services cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card__body {
+  padding: 1.25rem;
+}
+
+.service-card__body h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.service-card__body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Contact (below hero) */
+.page {
+  scroll-margin-top: 1rem;
+  padding: 3rem 1.5rem 4rem;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.page__header {
+  margin-bottom: 2rem;
+}
+
+.page__header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  font-weight: 700;
+}
+
+.page__header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
+}
+
+.form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
