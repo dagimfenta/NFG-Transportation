@@ -212,6 +212,16 @@ a:hover {
   object-fit: cover;
 }
 
+.page-hero--services {
+  height: 70vh;
+  min-height: 460px;
+}
+
+.page-hero--services img {
+  object-fit: contain;
+  background: #0f1419;
+}
+
 .page-hero__overlay {
   position: absolute;
   inset: 0;
