@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header site-header--page">
       <a class="logo" href="index.html">
         <img src="logo.png" alt="NFG Transportation" />
       </a>
@@ -29,58 +29,137 @@
       <div class="nav-backdrop" aria-hidden="true"></div>
       <nav class="site-nav" id="site-nav-menu" aria-label="Main">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
+        <a href="#about">About</a>
         <a href="services.html">Services</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section class="hero" id="top" aria-label="Welcome">
-      <div class="hero__bg" aria-hidden="true">
-        <video
-          class="hero__video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-        >
-          <source src="videos/hero.mp4" type="video/mp4" />
-        </video>
+    <div class="home-first-screen">
+      <section class="hero" id="top" aria-label="Welcome">
+        <div class="hero__bg" aria-hidden="true">
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+          >
+            <source src="videos/hero.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <h1 class="hero__title sr-only">NFG Transportation</h1>
+        <p class="hero__subtitle hero__subtitle--dvd" id="hero-dvd-subtitle">
+          Your trusted transportation partner.
+        </p>
+      </section>
+    </div>
+
+    <section id="about" aria-label="About us">
+      <div class="content-section">
+        <div class="two-col">
+          <div class="two-col__text">
+            <h2>Who We Are</h2>
+            <p>
+              NFG Transportation is a full-service logistics company committed to
+              moving freight safely, on time, and at competitive rates. Built on
+              years of hands-on experience in the trucking industry, we understand
+              the demands of shippers and carriers alike.
+            </p>
+            <p>
+              Our team combines deep industry knowledge with modern technology to
+              deliver dependable solutions for businesses of every size.
+            </p>
+          </div>
+          <img src="images/about-who-we-are.jpg" alt="Who we are section image" />
+        </div>
       </div>
-      <div class="hero__overlay" aria-hidden="true"></div>
-      <div class="hero__content">
-        <h1 class="hero__title"> </h1>
-        <p class="hero__subtitle">Your trusted transportation partner.</p>
+
+      <div class="content-section">
+        <div class="two-col two-col--reverse">
+          <div class="two-col__text">
+            <h2>Our Mission</h2>
+            <p>
+              We exist to simplify freight movement. Whether it's a single load or
+              a long-term contract, we treat every shipment as our own — ensuring
+              clear communication, transparent pricing, and reliable delivery from
+              pickup to drop-off.
+            </p>
+            <p>
+              Safety, integrity, and customer satisfaction drive every decision we
+              make.
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=800&q=80"
+            alt="Warehouse logistics operations"
+          />
+        </div>
       </div>
     </section>
 
-    <main class="page" id="contact">
-      <div class="page__header">
-        <h1>Contact us</h1>
-        <p>Send a message and we will get back to you.</p>
-      </div>
+    <div class="contact-wrapper">
+      <main class="page page--contact" id="contact">
+        <div class="contact-split">
+          <aside class="contact-info" aria-label="Company contact information">
+            <p class="contact-split__lead">
+              Reach us by phone or email, or visit our office in Nashville.
+            </p>
+            <dl class="contact-info__list">
+              <div class="contact-info__item">
+                <dt>Phone</dt>
+                <dd>
+                  <a href="tel:+16293458606">629-345-8606</a>
+                </dd>
+              </div>
+              <div class="contact-info__item">
+                <dt>Email</dt>
+                <dd>
+                  <a href="mailto:info@nfgtransportation.net">info@nfgtransportation.net</a>
+                </dd>
+              </div>
+              <div class="contact-info__item">
+                <dt>Address</dt>
+                <dd>
+                  301 S Perimeter Park Dr<br />
+                  Nashville, TN 37211
+                </dd>
+              </div>
+            </dl>
+          </aside>
 
-      <form action="#" method="post" id="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
+          <div class="contact-split__form">
+            <div class="page__header">
+              <h2 class="contact-split__title">Contact us</h2>
+              <p>Send a message and we will get back to you.</p>
+            </div>
+
+            <form action="#" method="post" id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--on-dark">Send message</button>
+            </form>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number (optional)</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send message</button>
-      </form>
-    </main>
+      </main>
+    </div>
     <script src="js/nav.js" defer></script>
+    <script src="js/hero-dvd-bounce.js" defer></script>
   </body>
 </html>
